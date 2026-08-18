@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wi-kel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .fullscreen-tab {
+      position: fixed;
+      inset: 0;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="open-tab" type="button">Open Fullscreen Tab</button>
+
+  <section id="fullscreen-tab" class="fullscreen-tab hidden" aria-label="Fullscreen tab">
+    <h1>Fullscreen Tab</h1>
+    <p>Press Escape to close.</p>
+    <button id="close-tab" type="button">Close</button>
+  </section>
+
+  <script>
+    const tab = document.getElementById('fullscreen-tab');
+    const openButton = document.getElementById('open-tab');
+    const closeButton = document.getElementById('close-tab');
+
+    function closeTab() {
+      tab.classList.add('hidden');
+      if (document.fullscreenElement === tab) {
+        document.exitFullscreen();
+      }
+    }
+
+    function openTab() {
+      tab.classList.remove('hidden');
+      if (tab.requestFullscreen) {
+        tab.requestFullscreen().catch(() => undefined);
+      }
+    }
+
+    openButton.addEventListener('click', openTab);
+    closeButton.addEventListener('click', closeTab);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !tab.classList.contains('hidden')) {
+        closeTab();
+      }
+    });
+  </script>
+</body>
+</html>
