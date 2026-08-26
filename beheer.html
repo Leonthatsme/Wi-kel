@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173f36" />
+    <title>De Wi-kel | Beheer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section id="loginView" class="login-card">
+        <div class="brand light"><span class="brand-mark">W</span><span>De Wi-kel</span></div>
+        <p class="eyebrow">MEDEWERKERSPORTAAL</p>
+        <h1>Voorraad beheren</h1>
+        <p>Log in om de voorraad bij de receptie aan te passen.</p>
+        <form id="loginForm">
+          <label>Gebruikersnaam<input name="username" autocomplete="username" required placeholder="bijv. receptie" /></label>
+          <label>Wachtwoord<input name="password" type="password" autocomplete="current-password" required placeholder="••••••••" /></label>
+          <p id="loginError" class="form-error" hidden></p>
+          <button class="primary-button" type="submit">Inloggen</button>
+        </form>
+        <p class="login-hint">Demo: <strong>receptie</strong> / <strong>wikel2026</strong></p>
+      </section>
+
+      <section id="adminView" hidden>
+        <header class="admin-header">
+          <div class="brand light"><span class="brand-mark">W</span><span>De Wi-kel</span></div>
+          <button id="logoutButton" class="text-button">Uitloggen</button>
+        </header>
+        <div class="admin-title"><p class="eyebrow">GOEDEMORGEN</p><h1>Voorraad</h1><p>Pas de aantallen snel aan na een verkoop of levering.</p></div>
+        <div id="adminProducts" class="admin-products"></div>
+        <button id="newProductButton" class="add-button">＋ Nieuw product</button>
+      </section>
+    </main>
+
+    <dialog id="productDialog">
+      <form id="productForm" method="dialog">
+        <div class="dialog-heading"><h2>Nieuw product</h2><button type="button" class="close-button" id="closeDialog">×</button></div>
+        <label>Productnaam<input name="name" required maxlength="36" placeholder="Bijv. Fles water" /></label>
+        <label>Beginvoorraad<input name="stock" required type="number" min="0" max="9999" value="0" /></label>
+        <button class="primary-button" value="submit">Product toevoegen</button>
+      </form>
+    </dialog>
+    <script src="app.js"></script>
+    <script>window.Wikel.initAdmin();</script>
+  </body>
+</html>
