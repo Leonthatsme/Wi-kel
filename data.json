@@ -12,9 +12,33 @@
     }
   ],
   "products": [
-    { "id": "melk", "name": "Verse melk", "stock": 6, "active": true, "icon": "M" },
-    { "id": "yoghurt", "name": "Verse yoghurt", "stock": 3, "active": true, "icon": "Y" },
-    { "id": "ijsjes", "name": "IJsjes", "stock": 12, "active": true, "icon": "I" },
-    { "id": "frisdrank", "name": "Frisdrank", "stock": 0, "active": true, "icon": "F" }
+    {
+      "id": "melk",
+      "name": "Verse melk",
+      "stock": 10,
+      "active": true,
+      "icon": "M"
+    },
+    {
+      "id": "yoghurt",
+      "name": "Verse yoghurt",
+      "stock": 3,
+      "active": true,
+      "icon": "Y"
+    },
+    {
+      "id": "ijsjes",
+      "name": "IJsjes",
+      "stock": 9,
+      "active": true,
+      "icon": "I"
+    },
+    {
+      "id": "frisdrank",
+      "name": "Frisdrank",
+      "stock": 7,
+      "active": true,
+      "icon": "F"
+    }
   ]
 }
