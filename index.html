@@ -1,33 +1,36 @@
 <!doctype html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f5f2e9" />
-    <title>De Wi-kel | Voorraad</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main class="public-screen" aria-live="polite">
-      <header class="screen-header">
-        <div class="brand"><span class="brand-mark">W</span><span>De Wi-kel</span></div>
-        <p id="lastUpdated">Voorraad van nu</p>
-      </header>
 
-      <section class="hero">
-        <p class="eyebrow">RECEPTIE · CAMPING & APPARTEMENTEN</p>
-        <h1>Wat is er<br />vandaag <em>beschikbaar?</em></h1>
-        <p class="intro">Kom gerust langs bij de receptie.</p>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f2e9" />
+  <title></title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-      <section id="productList" class="product-grid" aria-label="Actuele voorraad"></section>
+<body>
+  <main class="public-screen" aria-live="polite">
+    <header class="screen-header">
+      <div class="brand"><span class="brand-mark">B</span>Boerderij ’t Melkhuis<span></span></div>
+      <p id="lastUpdated">Voorraad van nu</p>
+    </header>
 
-      <footer class="screen-footer">
-        <span>Voorraad wordt automatisch bijgewerkt</span>
-        <a href="beheer.html">Medewerker? Beheer voorraad →</a>
-      </footer>
-    </main>
-    <script src="app.js"></script>
-    <script>window.Wikel.renderPublic();</script>
-  </body>
+    <section class="hero">
+      <p class="eyebrow">RECEPTIE · CAMPING & APPARTEMENTEN</p>
+      <h1>Wat is er<br />vandaag <em>beschikbaar?</em></h1>
+      <p class="intro">Kom gerust langs bij de receptie.</p>
+    </section>
+
+    <section id="productList" class="product-grid" aria-label="Actuele voorraad"></section>
+
+    <footer class="screen-footer">
+      <span>Voorraad wordt automatisch bijgewerkt</span>
+
+    </footer>
+  </main>
+  <script src="app.js"></script>
+  <script>window.Wikel.renderPublic();</script>
+</body>
+
 </html>
