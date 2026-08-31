@@ -13,20 +13,27 @@
   ],
   "products": [
     {
+<<<<<<< Updated upstream
       "id": "melk",
       "name": "Verse melk",
       "stock": 4,
+=======
+      "id": "ea9f245a-3b31-4363-a295-a680ad5cd728",
+      "name": "Verse melk 1L",
+      "stock": 14,
+>>>>>>> Stashed changes
       "active": true,
-      "icon": "M"
+      "icon": "N"
     },
     {
-      "id": "yoghurt",
-      "name": "Verse yoghurt",
+      "id": "adb51282-d158-471b-88d0-6a2491dc12e3",
+      "name": "Verse yoghurt 1L",
       "stock": 3,
       "active": true,
-      "icon": "Y"
+      "icon": "N"
     },
     {
+<<<<<<< Updated upstream
       "id": "ijsjes",
       "name": "IJsjes",
       "stock": 10,
@@ -100,6 +107,32 @@
       "id": "f590383b-59d9-4124-993c-f6bd4dc518bb",
       "name": "water",
       "stock": 0,
+=======
+      "id": "260eeb7e-191e-4aee-aa6d-d1f6eaab975a",
+      "name": "Tarwe brood 1 ST.",
+      "stock": 5,
+      "active": true,
+      "icon": "N"
+    },
+    {
+      "id": "1bcf63be-d66a-4402-923b-872089768381",
+      "name": "Volkoren brood 1 ST.",
+      "stock": 9,
+      "active": false,
+      "icon": "N"
+    },
+    {
+      "id": "0896d238-8b66-4565-8432-6723f26d386d",
+      "name": "Ola Ijs Liuk Waterijs 75 ML",
+      "stock": 0,
+      "active": true,
+      "icon": "N"
+    },
+    {
+      "id": "491d63a9-8dea-4aaf-9851-1ca6ce705414",
+      "name": "AA drink High Energy 330 ML",
+      "stock": 4,
+>>>>>>> Stashed changes
       "active": true,
       "icon": "N"
     }
