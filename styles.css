@@ -1,23 +1,402 @@
-* { box-sizing: border-box; }
-body { margin: 0; font-family: Arial, sans-serif; color: #1d2925; background: #f5f5f1; }
-.public-screen { max-width: 1200px; min-height: 100vh; margin: auto; padding: 24px; }
-.screen-header, .screen-footer, .admin-header { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
-.brand { display: flex; align-items: center; gap: 8px; font-weight: bold; font-size: 20px; }
-.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; color: white; background: #27664e; border-radius: 5px; }
-.screen-header p, .screen-footer { color: #5f6965; font-size: 13px; }
-.hero { padding: 45px 0 30px; border-bottom: 3px solid #27664e; }
-.eyebrow { color: #27664e; font-size: 12px; font-weight: bold; letter-spacing: 1px; }
-.hero h1, .admin-title h1, .login-card h1 { margin: 8px 0; font-size: clamp(34px, 6vw, 62px); line-height: 1.05; }
-.hero h1 em { color: #27664e; font-style: normal; }
-.intro { color: #5f6965; }
-.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 28px 0; }
-.product-card { min-height: 220px; padding: 18px; border: 1px solid #b9c4bd; border-radius: 8px; background: white; display: flex; flex-direction: column; }
-.product-card.low { border-left: 7px solid #d68a2e; }
-.product-card.sold-out, .product-card.paused { color: #656d69; background: #e9ece9; border-left: 7px solid #7c8580; }
-.product-icon { display: grid; place-items: center; width: 38px; height: 38px; color: white; background: #27664e; border-radius: 50%; font-weight: bold; }
-.product-name { margin-top: 20px; font-size: 20px; font-weight: bold; }
-.stock { margin-top: auto; display: flex; align-items: baseline; gap: 8px; }
-.stock strong { font-size: 58px; color: #27664e; }.sold-out .stock strong, .paused .stock strong { color: #656d69; }
-.stock span { font-size: 12px; color: #5f6965; }.status { margin: 14px 0 0; font-size: 13px; font-weight: bold; }.status span { display: inline-block; width: 9px; height: 9px; margin-right: 6px; border-radius: 50%; background: #369461; }.status.low span { background: #d68a2e; }.status.sold-out span, .status.paused span { background: #7c8580; }.screen-footer a { color: #27664e; }
-.admin-body { min-height: 100vh; background: #e2ebe5; }.admin-shell { max-width: 680px; margin: auto; padding: 20px; }.light { color: #1d2925; }.admin-title { padding: 25px 0 18px; }.admin-title p:not(.eyebrow) { color: #5f6965; }.login-card { max-width: 440px; margin: 8vh auto; padding: 28px; background: white; border: 1px solid #b9c4bd; border-radius: 8px; }.login-card .brand { margin-bottom: 38px; }.login-card form { display: grid; gap: 14px; margin-top: 25px; }label { display: grid; gap: 6px; font-size: 13px; font-weight: bold; }input { width: 100%; padding: 11px; border: 1px solid #9ca9a1; border-radius: 4px; font: inherit; }.primary-button, .add-button { padding: 12px; color: white; background: #27664e; border: 0; border-radius: 4px; font: inherit; font-weight: bold; cursor: pointer; }.primary-button:hover, .add-button:hover { background: #1b4d3a; }.text-button { padding: 8px 10px; background: white; border: 1px solid #9ca9a1; border-radius: 4px; cursor: pointer; }.form-error { color: #b5382b; }.login-hint { color: #5f6965; font-size: 12px; }.admin-products { display: grid; gap: 10px; }.admin-product { display: grid; grid-template-columns: 40px 1fr auto; gap: 12px; align-items: center; padding: 15px; background: white; border: 1px solid #b9c4bd; border-radius: 6px; }.admin-product .product-icon { font-size: 14px; }.admin-product h2 { margin: 0; font-size: 18px; }.admin-product .status { margin: 5px 0 0; }.stepper { display: flex; border: 1px solid #9ca9a1; border-radius: 4px; overflow: hidden; }.stepper button { width: 38px; border: 0; background: #edf2ee; font-size: 21px; cursor: pointer; }.stepper button:hover { background: #d5e2d9; }.stock-input { width: 52px; padding: 7px 2px; text-align: center; border: 0; border-left: 1px solid #9ca9a1; border-right: 1px solid #9ca9a1; border-radius: 0; }.availability { grid-column: 2 / -1; display: flex; align-items: center; gap: 7px; color: #5f6965; font-size: 12px; }.availability input { width: auto; }.add-button { width: 100%; margin-top: 16px; background: transparent; color: #27664e; border: 1px dashed #27664e; }dialog { width: min(420px, calc(100% - 24px)); border: 1px solid #9ca9a1; border-radius: 7px; }dialog form { display: grid; gap: 16px; padding: 20px; }.dialog-heading { display: flex; align-items: center; justify-content: space-between; }.dialog-heading h2 { margin: 0; }.close-button { font-size: 25px; border: 0; background: transparent; cursor: pointer; }
-@media (max-width: 700px) { .product-grid { grid-template-columns: repeat(2, 1fr); }.product-card { min-height: 180px; }.admin-product { grid-template-columns: 40px 1fr; }.stepper { grid-column: 1 / -1; }.availability { grid-column: 2; grid-row: 2; justify-self: end; }.screen-footer { flex-direction: column; align-items: flex-start; } }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #1d2925;
+    background: #f5f5f1;
+}
+
+.public-screen {
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: auto;
+    padding: 24px;
+}
+
+.screen-header,
+.screen-footer,
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    color: white;
+    background: #27664e;
+    border-radius: 5px;
+}
+
+.screen-header p,
+.screen-footer {
+    color: #5f6965;
+    font-size: 13px;
+}
+
+.hero {
+    padding: 45px 0 30px;
+    border-bottom: 3px solid #27664e;
+}
+
+.eyebrow {
+    color: #27664e;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero h1,
+.admin-title h1,
+.login-card h1 {
+    margin: 8px 0;
+    font-size: clamp(34px, 6vw, 62px);
+    line-height: 1.05;
+}
+
+.hero h1 em {
+    color: #27664e;
+    font-style: normal;
+}
+
+.intro {
+    color: #5f6965;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding: 28px 0;
+}
+
+.product-card {
+    min-height: 220px;
+    padding: 18px;
+    border: 1px solid #b9c4bd;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card.low {
+    border-left: 7px solid #d68a2e;
+}
+
+.product-card.sold-out,
+.product-card.paused {
+    color: #656d69;
+    background: #e9ece9;
+    border-left: 7px solid #7c8580;
+}
+
+.product-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    color: white;
+    background: #27664e;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.product-name {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stock {
+    margin-top: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.stock strong {
+    font-size: 58px;
+    color: #27664e;
+}
+
+.sold-out .stock strong,
+.paused .stock strong {
+    color: #656d69;
+}
+
+.stock span {
+    font-size: 12px;
+    color: #5f6965;
+}
+
+.status {
+    margin: 14px 0 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.status span {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: #369461;
+}
+
+.status.low span {
+    background: #d68a2e;
+}
+
+.status.sold-out span,
+.status.paused span {
+    background: #7c8580;
+}
+
+.screen-footer a {
+    color: #27664e;
+}
+
+.admin-body {
+    min-height: 100vh;
+    background: #e2ebe5;
+}
+
+.admin-shell {
+    max-width: 680px;
+    margin: auto;
+    padding: 20px;
+}
+
+.light {
+    color: #1d2925;
+}
+
+.admin-title {
+    padding: 25px 0 18px;
+}
+
+.admin-title p:not(.eyebrow) {
+    color: #5f6965;
+}
+
+.login-card {
+    max-width: 440px;
+    margin: 8vh auto;
+    padding: 28px;
+    background: white;
+    border: 1px solid #b9c4bd;
+    border-radius: 8px;
+}
+
+.login-card .brand {
+    margin-bottom: 38px;
+}
+
+.login-card form {
+    display: grid;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+label {
+    display: grid;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #9ca9a1;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.primary-button,
+.add-button {
+    padding: 12px;
+    color: white;
+    background: #27664e;
+    border: 0;
+    border-radius: 4px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-button:hover,
+.add-button:hover {
+    background: #1b4d3a;
+}
+
+.text-button {
+    padding: 8px 10px;
+    background: white;
+    border: 1px solid #9ca9a1;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-error {
+    color: #b5382b;
+}
+
+.login-hint {
+    color: #5f6965;
+    font-size: 12px;
+}
+
+.admin-products {
+    display: grid;
+    gap: 10px;
+}
+
+.admin-product {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border: 1px solid #b9c4bd;
+    border-radius: 6px;
+}
+
+.admin-product .product-icon {
+    font-size: 14px;
+}
+
+.admin-product h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.admin-product .status {
+    margin: 5px 0 0;
+}
+
+.stepper {
+    display: flex;
+    border: 1px solid #9ca9a1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stepper button {
+    width: 38px;
+    border: 0;
+    background: #edf2ee;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.stepper button:hover {
+    background: #d5e2d9;
+}
+
+.stock-input {
+    width: 52px;
+    padding: 7px 2px;
+    text-align: center;
+    border: 0;
+    border-left: 1px solid #9ca9a1;
+    border-right: 1px solid #9ca9a1;
+    border-radius: 0;
+}
+
+.availability {
+    grid-column: 2 / -1;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #5f6965;
+    font-size: 12px;
+}
+
+.availability input {
+    width: auto;
+}
+
+.add-button {
+    width: 100%;
+    margin-top: 16px;
+    background: transparent;
+    color: #27664e;
+    border: 1px dashed #27664e;
+}
+
+dialog {
+    width: min(420px, calc(100% - 24px));
+    border: 1px solid #9ca9a1;
+    border-radius: 7px;
+}
+
+dialog form {
+    display: grid;
+    gap: 16px;
+    padding: 20px;
+}
+
+.dialog-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dialog-heading h2 {
+    margin: 0;
+}
+
+.close-button {
+    font-size: 25px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-card {
+        min-height: 180px;
+    }
+
+    .admin-product {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .stepper {
+        grid-column: 1 / -1;
+    }
+
+    .availability {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    .screen-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
