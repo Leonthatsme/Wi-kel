@@ -12,8 +12,8 @@ const initial = {
   users: [
     {
       username: 'receptie',
-      passwordSalt: 'wikel-demo-salt',
-      passwordHash: crypto.scryptSync('wikel2026', 'wikel-demo-salt', 64).toString('hex')
+      passwordSalt: 'boerderij lsn-demo-salt',
+      passwordHash: crypto.scryptSync('boerderij lsn2026', 'boerderij lsn-demo-salt', 64).toString('hex')
     }
   ],
   products: [
@@ -24,9 +24,33 @@ const initial = {
   ]
 };
 
+function normalizeDemoUser(data) {
+  const demoPassword = 'boerderij lsn2026';
+  const demoSalt = 'boerderij lsn-demo-salt';
+  const demoHash = crypto.scryptSync(demoPassword, demoSalt, 64).toString('hex');
+
+  const users = Array.isArray(data.users) ? data.users : [];
+  const demoUser = users.find(user => user.username === 'receptie');
+
+  if (demoUser) {
+    demoUser.passwordSalt = demoSalt;
+    demoUser.passwordHash = demoHash;
+  } else {
+    users.unshift({ username: 'receptie', passwordSalt: demoSalt, passwordHash: demoHash });
+  }
+
+  data.users = users;
+  return data;
+}
+
 function read() {
   if (!fs.existsSync(dataFile)) fs.writeFileSync(dataFile, JSON.stringify(initial, null, 2));
-  return JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+  const data = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+  const normalized = normalizeDemoUser(data);
+  if (JSON.stringify(normalized) !== fs.readFileSync(dataFile, 'utf8')) {
+    write(normalized);
+  }
+  return normalized;
 }
 
 function write(data) {
@@ -151,4 +175,4 @@ http
       json(res, 400, { error: error.message || 'Er ging iets mis.' });
     }
   })
-  .listen(PORT, () => console.log(`De Wi-kel draait op http://localhost:${PORT}`));
+  .listen(PORT, () => console.log(`Boerderij LSN draait op http://localhost:${PORT}`));

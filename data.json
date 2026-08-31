@@ -2,13 +2,8 @@
   "users": [
     {
       "username": "receptie",
-      "passwordSalt": "wikel-demo-salt",
-      "passwordHash": "f9961ed6021a724873138bba9af8fc46b42396a2a1efbc48e437509b8db025006cdfce6be74c102938727e9b0735e9b42760076118829c6b374c6c850c02df78"
-    },
-    {
-      "username": "beheerder",
-      "passwordSalt": "wikel-demo-salt",
-      "passwordHash": "f9961ed6021a724873138bba9af8fc46b42396a2a1efbc48e437509b8db025006cdfce6be74c102938727e9b0735e9b42760076118829c6b374c6c850c02df78"
+      "passwordSalt": "boerderij lsn-demo-salt",
+      "passwordHash": "16426be769f492fa9ee4b2dc13dd9263272dba947a0696a4db741606ecc0160b9ab6969542c8276936b8ab35b9b9df24e1bdb7d9e9843001502abb364cb14ce0"
     }
   ],
   "products": [
