@@ -111,12 +111,13 @@
 
     document.getElementById('productForm').addEventListener('submit', async event => {
       event.preventDefault();
-      const form = Object.fromEntries(new FormData(event.currentTarget));
+      const formElement = event.currentTarget;
+      const form = Object.fromEntries(new FormData(formElement));
       form.stock = Number(form.stock);
 
       try {
         await api('/products', { method: 'POST', body: JSON.stringify(form) });
-        event.currentTarget.reset();
+        formElement.reset();
         dialog.close();
         renderAdmin();
       } catch (error) {
