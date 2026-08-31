@@ -13,15 +13,9 @@
   ],
   "products": [
     {
-<<<<<<< Updated upstream
-      "id": "melk",
-      "name": "Verse melk",
-      "stock": 4,
-=======
       "id": "ea9f245a-3b31-4363-a295-a680ad5cd728",
       "name": "Verse melk 1L",
       "stock": 14,
->>>>>>> Stashed changes
       "active": true,
       "icon": "N"
     },
@@ -33,81 +27,6 @@
       "icon": "N"
     },
     {
-<<<<<<< Updated upstream
-      "id": "ijsjes",
-      "name": "IJsjes",
-      "stock": 10,
-      "active": false,
-      "icon": "I"
-    },
-    {
-      "id": "frisdrank",
-      "name": "Frisdrank",
-      "stock": 0,
-      "active": true,
-      "icon": "F"
-    },
-    {
-      "id": "water",
-      "name": "water",
-      "stock": 3,
-      "active": true,
-      "icon": "N"
-    },
-    {
-      "id": "c7679388-e94d-46aa-9ce5-71a3f278ea39",
-      "name": "water",
-      "stock": 1,
-      "active": true,
-      "icon": "N"
-    },
-    {
-      "id": "1d1d828b-18b1-4e48-b238-e3627bc0c647",
-      "name": "water",
-      "stock": 2,
-      "active": true,
-      "icon": "N"
-    },
-    {
-      "id": "eeecaea4-1a91-4f0e-874a-23eaee496c0f",
-      "name": "lo",
-      "stock": 2,
-      "active": true,
-      "icon": "N"
-    },
-    {
-      "id": "c53c117e-1928-4c85-b08f-ffa18d2df453",
-      "name": "lo",
-      "stock": 2,
-      "active": true,
-      "icon": "N"
-    },
-    {
-      "id": "3f9c3573-76e3-4ac7-b79c-509e5a8eb994",
-      "name": "water",
-      "stock": 2,
-      "active": true,
-      "icon": "N"
-    },
-    {
-      "id": "67308712-727c-4c36-b743-f794f97043db",
-      "name": "water",
-      "stock": 2,
-      "active": true,
-      "icon": "N"
-    },
-    {
-      "id": "3a33a48b-3600-42f7-b389-6876afed96cd",
-      "name": "water",
-      "stock": 2,
-      "active": true,
-      "icon": "N"
-    },
-    {
-      "id": "f590383b-59d9-4124-993c-f6bd4dc518bb",
-      "name": "water",
-      "stock": 0,
-=======
       "id": "260eeb7e-191e-4aee-aa6d-d1f6eaab975a",
       "name": "Tarwe brood 1 ST.",
       "stock": 5,
@@ -132,7 +51,6 @@
       "id": "491d63a9-8dea-4aaf-9851-1ca6ce705414",
       "name": "AA drink High Energy 330 ML",
       "stock": 4,
->>>>>>> Stashed changes
       "active": true,
       "icon": "N"
     }
