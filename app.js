@@ -1,5 +1,5 @@
 (() => {
-  const token = () => sessionStorage.getItem('wikel-token');
+  const token = () => sessionStorage.getItem('boerderij lsn-token');
 
   const api = async (path, options = {}) => {
     const response = await fetch(`/api${path}`, {
@@ -88,7 +88,7 @@
           method: 'POST',
           body: JSON.stringify(Object.fromEntries(form))
         });
-        sessionStorage.setItem('wikel-token', login.token);
+        sessionStorage.setItem('boerderij lsn-token', login.token);
         showAdmin();
       } catch (reason) {
         error.hidden = false;
@@ -100,7 +100,7 @@
       try {
         await api('/logout', { method: 'POST' });
       } finally {
-        sessionStorage.removeItem('wikel-token');
+        sessionStorage.removeItem('boerderij lsn-token');
         location.reload();
       }
     });
@@ -185,7 +185,7 @@
     }
   }
 
-  window.Wikel = { renderPublic, initAdmin };
+  window.boerderij_lsn = { renderPublic, initAdmin };
 
   if (document.getElementById('productList')) setInterval(() => location.reload(), 60000);
 })();

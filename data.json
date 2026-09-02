@@ -2,40 +2,42 @@
   "users": [
     {
       "username": "receptie",
-      "passwordSalt": "wikel-demo-salt",
-      "passwordHash": "f9961ed6021a724873138bba9af8fc46b42396a2a1efbc48e437509b8db025006cdfce6be74c102938727e9b0735e9b42760076118829c6b374c6c850c02df78"
-    },
-    {
-      "username": "beheerder",
-      "passwordSalt": "wikel-demo-salt",
-      "passwordHash": "f9961ed6021a724873138bba9af8fc46b42396a2a1efbc48e437509b8db025006cdfce6be74c102938727e9b0735e9b42760076118829c6b374c6c850c02df78"
+      "passwordSalt": "boerderij lsn-demo-salt",
+      "passwordHash": "16426be769f492fa9ee4b2dc13dd9263272dba947a0696a4db741606ecc0160b9ab6969542c8276936b8ab35b9b9df24e1bdb7d9e9843001502abb364cb14ce0"
     }
   ],
   "products": [
     {
-      "id": "melk",
-      "name": "Verse melk",
-      "stock": 4,
+      "id": "ea9f245a-3b31-4363-a295-a680ad5cd728",
+      "name": "Verse melk 1L",
+      "stock": 14,
       "active": true,
-      "icon": "M"
+      "icon": "N"
     },
     {
-      "id": "yoghurt",
-      "name": "Verse yoghurt",
+      "id": "adb51282-d158-471b-88d0-6a2491dc12e3",
+      "name": "Verse yoghurt 1L",
       "stock": 3,
       "active": true,
-      "icon": "Y"
+      "icon": "N"
     },
     {
-      "id": "ijsjes",
-      "name": "IJsjes",
-      "stock": 10,
+      "id": "260eeb7e-191e-4aee-aa6d-d1f6eaab975a",
+      "name": "Tarwe brood 1 ST.",
+      "stock": 5,
+      "active": true,
+      "icon": "N"
+    },
+    {
+      "id": "1bcf63be-d66a-4402-923b-872089768381",
+      "name": "Volkoren brood 1 ST.",
+      "stock": 9,
       "active": false,
-      "icon": "I"
+      "icon": "N"
     },
     {
-      "id": "frisdrank",
-      "name": "Frisdrank",
+      "id": "0896d238-8b66-4565-8432-6723f26d386d",
+      "name": "Ola Ijs Liuk Waterijs 75 ML",
       "stock": 0,
       "active": true,
       "icon": "F"
