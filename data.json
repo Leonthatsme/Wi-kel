@@ -41,6 +41,13 @@
       "stock": 0,
       "active": true,
       "icon": "F"
+    },
+    {
+      "id": "491d63a9-8dea-4aaf-9851-1ca6ce705414",
+      "name": "AA drink High Energy 330 ML",
+      "stock": 4,
+      "active": true,
+      "icon": "N"
     }
   ]
 }
