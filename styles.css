@@ -312,6 +312,15 @@ input {
     background: #d5e2d9;
 }
 
+.stepper .delete-button {
+    color: white;
+    background: #b33b32;
+}
+
+.stepper .delete-button:hover {
+    background: #8f2d25;
+}
+
 .stock-input {
     width: 52px;
     padding: 7px 2px;

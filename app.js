@@ -147,6 +147,7 @@
                 <button type="button" data-action="decrease" aria-label="Verminder ${escapeHtml(product.name)}">−</button>
                 <input class="stock-input" data-action="set" aria-label="Stel voorraad van ${escapeHtml(product.name)} in" type="number" min="0" max="9999" value="${product.stock}" />
                 <button type="button" data-action="increase" aria-label="Verhoog ${escapeHtml(product.name)}">+</button>
+                <button type="button" class="delete-button" data-action="delete" aria-label="Verwijder ${escapeHtml(product.name)}">X</button>
               </div>
               <label class="availability">
                 <input type="checkbox" data-action="toggle" ${product.active ? 'checked' : ''} />
@@ -160,6 +161,8 @@
       container.querySelectorAll('button[data-action], input[data-action]').forEach(control =>
         control.addEventListener(control.dataset.action === 'set' ? 'change' : 'click', async () => {
           const card = control.closest('.admin-product');
+          const productName = card.querySelector('h2').textContent;
+          if (control.dataset.action === 'delete' && !confirm(`Weet je zeker dat je ${productName} wilt verwijderen?`)) return;
           const value = Number(control.value);
           const patch =
             control.dataset.action === 'toggle'
@@ -169,7 +172,7 @@
                 : { stock: Math.max(0, Number(card.dataset.stock) + (control.dataset.action === 'increase' ? 1 : -1)) };
 
           try {
-            await api(`/products/${card.dataset.id}`, { method: 'PATCH', body: JSON.stringify(patch) });
+            await api(`/products/${card.dataset.id}`, control.dataset.action === 'delete' ? { method: 'DELETE' } : { method: 'PATCH', body: JSON.stringify(patch) });
             renderAdmin();
           } catch (error) {
             alert(error.message);

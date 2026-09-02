@@ -123,6 +123,15 @@ http
       }
 
       const match = url.pathname.match(/^\/api\/products\/([\w-]+)$/);
+      if (req.method === 'DELETE' && match) {
+        if (!authorized(req)) return json(res, 401, { error: 'Inloggen is vereist.' });
+        const data = read();
+        const index = data.products.findIndex(item => item.id === match[1]);
+        if (index === -1) return json(res, 404, { error: 'Product niet gevonden.' });
+        data.products.splice(index, 1);
+        write(data);
+        return json(res, 200, { ok: true });
+      }
       if (req.method === 'PATCH' && match) {
         if (!authorized(req)) return json(res, 401, { error: 'Inloggen is vereist.' });
 
