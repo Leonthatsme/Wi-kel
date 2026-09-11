@@ -10,10 +10,15 @@ body {
 }
 
 .public-screen {
-    max-width: 1200px;
+    max-width: 680px;
     min-height: 100vh;
     margin: auto;
     padding: 24px;
+}
+
+.public-body {
+    color: #111;
+    background: #fff;
 }
 
 .screen-header,
@@ -80,30 +85,32 @@ body {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    padding: 28px 0;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0;
 }
 
 .product-card {
-    min-height: 220px;
-    padding: 18px;
+    min-height: 98px;
+    padding: 15px;
     border: 1px solid #b9c4bd;
     border-radius: 8px;
     background: white;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
 }
 
 .product-card.low {
-    border-left: 7px solid #d68a2e;
+    border-left: 7px solid #111;
 }
 
 .product-card.sold-out,
 .product-card.paused {
-    color: #656d69;
-    background: #e9ece9;
-    border-left: 7px solid #7c8580;
+    color: #555;
+    background: #f2f2f2;
+    border-left: 7px solid #555;
 }
 
 .product-icon {
@@ -118,21 +125,23 @@ body {
 }
 
 .product-name {
-    margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
 }
 
+.public-product-info {
+    min-width: 0;
+}
+
 .stock {
-    margin-top: auto;
     display: flex;
     align-items: baseline;
     gap: 8px;
 }
 
 .stock strong {
-    font-size: 58px;
-    color: #27664e;
+    font-size: 34px;
+    color: #111;
 }
 
 .sold-out .stock strong,
@@ -142,11 +151,11 @@ body {
 
 .stock span {
     font-size: 12px;
-    color: #5f6965;
+    color: #555;
 }
 
 .status {
-    margin: 14px 0 0;
+    margin: 5px 0 0;
     font-size: 13px;
     font-weight: bold;
 }
@@ -157,16 +166,16 @@ body {
     height: 9px;
     margin-right: 6px;
     border-radius: 50%;
-    background: #369461;
+    background: #111;
 }
 
 .status.low span {
-    background: #d68a2e;
+    background: #555;
 }
 
 .status.sold-out span,
 .status.paused span {
-    background: #7c8580;
+    background: #777;
 }
 
 .screen-footer a {
@@ -383,11 +392,11 @@ dialog form {
 
 @media (max-width: 700px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .product-card {
-        min-height: 180px;
+        min-height: 88px;
     }
 
     .admin-product {

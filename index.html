@@ -9,25 +9,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body class="public-body">
   <main class="public-screen" aria-live="polite">
-    <header class="screen-header">
-      <div class="brand"><span class="brand-mark">B</span>Boerderij LSN<span></span></div>
-      <p id="lastUpdated">Voorraad van nu</p>
-    </header>
-
-    <section class="hero">
-      <p class="eyebrow">RECEPTIE · CAMPING & APPARTEMENTEN</p>
-      <h1>Wat is er<br />vandaag <em>beschikbaar?</em></h1>
-      <p class="intro">Kom gerust langs bij de receptie.</p>
-    </section>
-
     <section id="productList" class="product-grid" aria-label="Actuele voorraad"></section>
-
-    <footer class="screen-footer">
-      <span>Voorraad wordt automatisch bijgewerkt</span>
-
-    </footer>
   </main>
   <script src="app.js"></script>
   <script>window.boerderij_lsn.renderPublic();</script>

@@ -47,19 +47,16 @@
           const [label, state] = statusFor(product);
           return `
             <article class="product-card ${state}">
-              <div class="product-icon" aria-hidden="true">${product.icon || '•'}</div>
-              <div class="product-name">${escapeHtml(product.name)}</div>
+              <div class="public-product-info">
+                <div class="product-name">${escapeHtml(product.name)}</div>
+                <div class="status ${state}"><span></span>${label}</div>
+              </div>
               <div class="stock"><strong>${product.active ? product.stock : '—'}</strong><span>op voorraad</span></div>
-              <div class="status ${state}"><span></span>${label}</div>
             </article>
           `.trim();
         })
         .join('');
 
-      document.getElementById('lastUpdated').textContent = `Laatst bijgewerkt: ${new Intl.DateTimeFormat('nl-NL', {
-        hour: '2-digit',
-        minute: '2-digit'
-      }).format(new Date())}`;
     } catch (error) {
       list.innerHTML = `<p class="load-error">${errorMessage(error)}</p>`;
     }

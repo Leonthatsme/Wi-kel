@@ -104,32 +104,57 @@ wat tekst verandert die we niet gebruiken
 allemaal risico's die de project kan beinvloeden
 
 
-## 2026-08-21
+## 2026-08-31
 
 ### Taak
 
-Databasemodel maken voor activiteiten.
+naam veranderen van wi-kel naar boerderij lsn, en het oplossen van de fouten
 
 ### Prompt
 
-Maak een Entity Framework model voor een activiteit met datum, starttijd, eindtijd, locatie en beschrijving.
+wij hebben net alle namen met wi-kel en wikel naar boerderij lsn genoemd, alleen er klopt nu bepaalde dingen niet. kun je alles met deze veranderingen goed langs gaan en verbeteren?
 
 ### Outputsamenvatting
 
-Copilot genereerde een C# modelklasse.
+checkte alles na of alles de goede naam heeft nu
 
 ### Kritische beoordeling
 
-De gegenereerde klasse werkte grotendeels correct.
-Validatie voor verplichte velden ontbrak.
-Daarnaast was de locatie optioneel terwijl dit volgens de requirements niet wenselijk was.
+inloggen deed het niet
 
 ### Eigen aanpassingen
 
-- Required-attributen toegevoegd.
-- Maximale veldlengtes ingesteld.
-- Commentaar toegevoegd.
+nieuwe ai prompt/vraag gedaan om inloggen te verbeteren
 
 ### Resultaat
 
-Werkend databasemodel opgenomen in de applicatie.
+de naam verandert, inloggen deed het niet meer
+
+
+## 2026-08-31
+
+### Taak
+
+inloggen verbeteren
+
+### Prompt
+
+kun je kijken of je met die exacte gegevens in kan loggen want ik kan niet inloggen
+
+### Outputsamenvatting
+
+checken of de gegevens mee in kan loggen
+
+### Kritische beoordeling
+
+idfk
+
+### Eigen aanpassingen
+
+niks
+
+### Resultaat
+
+we konden met de goede inlog gegevens inloggen
+
+
