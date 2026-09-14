@@ -418,3 +418,8 @@ dialog form {
         align-items: flex-start;
     }
 }
+
+    .product-price {
+        font-size: 18px;
+        font-weight: bold;
+    }

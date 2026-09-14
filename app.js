@@ -33,6 +33,12 @@
           ? ['Bijna op', 'low']
           : ['Beschikbaar', 'available'];
 
+  const formatPrice = price => {
+    const euros = Number(price);
+    if (!Number.isFinite(euros)) return '';
+    return `€${euros.toFixed(2).replace('.', ',').replace(',00', ',-')}`;
+  };
+
   const errorMessage = error => `Kan voorraad niet laden: ${error.message}. Probeer het later opnieuw.`;
 
   async function renderPublic() {
@@ -49,6 +55,7 @@
             <article class="product-card ${state}">
               <div class="public-product-info">
                 <div class="product-name">${escapeHtml(product.name)}</div>
+                <div class="product-price">${formatPrice(product.price)}</div>
                 <div class="status ${state}"><span></span>${label}</div>
               </div>
               <div class="stock"><strong>${product.active ? product.stock : '—'}</strong><span>op voorraad</span></div>
@@ -110,6 +117,7 @@
       event.preventDefault();
       const formElement = event.currentTarget;
       const form = Object.fromEntries(new FormData(formElement));
+      form.price = Number(form.price);
       form.stock = Number(form.stock);
 
       try {
@@ -138,6 +146,7 @@
               <div class="product-icon" aria-hidden="true">${product.icon || '•'}</div>
               <div class="admin-product-info">
                 <h2>${escapeHtml(product.name)}</h2>
+                <p class="product-price">${formatPrice(product.price)}</p>
                 <p class="status ${state}"><span></span>${label}</p>
               </div>
               <div class="stepper">

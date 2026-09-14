@@ -17,10 +17,11 @@ const initial = {
     }
   ],
   products: [
-    { id: 'melk', name: 'Verse melk', stock: 6, active: true, icon: 'M' },
-    { id: 'yoghurt', name: 'Verse yoghurt', stock: 3, active: true, icon: 'Y' },
-    { id: 'ijsjes', name: 'IJsjes', stock: 12, active: true, icon: 'I' },
-    { id: 'frisdrank', name: 'Frisdrank', stock: 0, active: true, icon: 'F' }
+    { id: 'melk', name: 'Verse melk 1L', price: 1.75, stock: 6, active: true, icon: 'M' },
+    { id: 'yoghurt', name: 'Verse yoghurt 1L', price: 1.50, stock: 3, active: true, icon: 'Y' },
+    { id: 'brood', name: 'Tarwe brood 1 ST.', price: 2, stock: 5, active: true, icon: 'B' },
+    { id: 'ijsjes', name: 'Ola Ijs Liuk Waterijs 75 ML', price: 0.75, stock: 12, active: true, icon: 'I' },
+    { id: 'frisdrank', name: 'Frisdrank', price: 1.50, stock: 0, active: true, icon: 'F' }
   ]
 };
 
@@ -128,19 +129,23 @@ http
       if (req.method === 'POST' && url.pathname === '/api/products') {
         if (!authorized(req)) return json(res, 401, { error: 'Inloggen is vereist.' });
 
-        const { name, stock } = await body(req);
+        const { name, price, stock } = await body(req);
         if (
           typeof name !== 'string' ||
           !name.trim() ||
           name.trim().length > 36 ||
           !Number.isInteger(stock) ||
           stock < 0 ||
-          stock > 9999
+          stock > 9999 ||
+          typeof price !== 'number' ||
+          !Number.isFinite(price) ||
+          price < 0 ||
+          price > 9999
         )
-          return json(res, 400, { error: 'Controleer de productnaam en voorraad.' });
+          return json(res, 400, { error: 'Controleer de productnaam, prijs en voorraad.' });
 
         const data = read();
-        const product = { id: crypto.randomUUID(), name: name.trim(), stock, active: true, icon: 'N' };
+        const product = { id: crypto.randomUUID(), name: name.trim(), price: Math.round(price * 100) / 100, stock, active: true, icon: 'N' };
         data.products.push(product);
         write(data);
         return json(res, 201, product);

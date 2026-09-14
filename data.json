@@ -10,6 +10,7 @@
     {
       "id": "ea9f245a-3b31-4363-a295-a680ad5cd728",
       "name": "Verse melk 1L",
+      "price": 1.75,
       "stock": 14,
       "active": true,
       "icon": "N"
@@ -17,6 +18,7 @@
     {
       "id": "adb51282-d158-471b-88d0-6a2491dc12e3",
       "name": "Verse yoghurt 1L",
+      "price": 1.5,
       "stock": 3,
       "active": true,
       "icon": "N"
@@ -24,6 +26,7 @@
     {
       "id": "260eeb7e-191e-4aee-aa6d-d1f6eaab975a",
       "name": "Tarwe brood 1 ST.",
+      "price": 2,
       "stock": 5,
       "active": true,
       "icon": "N"
@@ -31,6 +34,7 @@
     {
       "id": "1bcf63be-d66a-4402-923b-872089768381",
       "name": "Volkoren brood 1 ST.",
+      "price": 2,
       "stock": 9,
       "active": false,
       "icon": "N"
@@ -38,6 +42,7 @@
     {
       "id": "0896d238-8b66-4565-8432-6723f26d386d",
       "name": "Ola Ijs Liuk Waterijs 75 ML",
+      "price": 0.75,
       "stock": 0,
       "active": true,
       "icon": "F"
