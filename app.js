@@ -29,9 +29,7 @@
       ? ['Tijdelijk niet beschikbaar', 'paused']
       : product.stock === 0
         ? ['Uitverkocht', 'sold-out']
-        : product.stock <= 3
-          ? ['Bijna op', 'low']
-          : ['Beschikbaar', 'available'];
+        : ['Beschikbaar', 'available'];
 
   const formatPrice = price => {
     const euros = Number(price);
@@ -53,12 +51,19 @@
           const [label, state] = statusFor(product);
           return `
             <article class="product-card ${state}">
+<<<<<<< Updated upstream
               <div class="public-product-info">
                 <div class="product-name">${escapeHtml(product.name)}</div>
                 <div class="product-price">${formatPrice(product.price)}</div>
                 <div class="status ${state}"><span></span>${label}</div>
               </div>
               <div class="stock"><strong>${product.active ? product.stock : '—'}</strong><span>op voorraad</span></div>
+=======
+              <div class="product-icon" aria-hidden="true">${product.icon || '•'}</div>
+              <div class="product-name">${escapeHtml(product.name)}</div>
+              <div class="stock"><strong>${product.active ? product.stock : '—'}</strong></div>
+              <div class="status ${state}"><span></span>${label}</div>
+>>>>>>> Stashed changes
             </article>
           `.trim();
         })

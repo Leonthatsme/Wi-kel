@@ -4,38 +4,59 @@
       "username": "receptie",
       "passwordSalt": "boerderij lsn-demo-salt",
       "passwordHash": "16426be769f492fa9ee4b2dc13dd9263272dba947a0696a4db741606ecc0160b9ab6969542c8276936b8ab35b9b9df24e1bdb7d9e9843001502abb364cb14ce0"
+    },
+    {
+      "username": "beheerder",
+      "passwordSalt": "boerderij lsn-demo-salt",
+      "passwordHash": "16426be769f492fa9ee4b2dc13dd9263272dba947a0696a4db741606ecc0160b9ab6969542c8276936b8ab35b9b9df24e1bdb7d9e9843001502abb364cb14ce0"
     }
   ],
   "products": [
     {
       "id": "ea9f245a-3b31-4363-a295-a680ad5cd728",
       "name": "Verse melk 1L",
+<<<<<<< Updated upstream
       "price": 1.75,
       "stock": 14,
+=======
+      "stock": 3,
+>>>>>>> Stashed changes
       "active": true,
       "icon": "N"
     },
     {
       "id": "adb51282-d158-471b-88d0-6a2491dc12e3",
       "name": "Verse yoghurt 1L",
+<<<<<<< Updated upstream
       "price": 1.5,
       "stock": 3,
+=======
+      "stock": 5,
+>>>>>>> Stashed changes
       "active": true,
       "icon": "N"
     },
     {
       "id": "260eeb7e-191e-4aee-aa6d-d1f6eaab975a",
       "name": "Tarwe brood 1 ST.",
+<<<<<<< Updated upstream
       "price": 2,
       "stock": 5,
+=======
+      "stock": 4,
+>>>>>>> Stashed changes
       "active": true,
       "icon": "N"
     },
     {
       "id": "1bcf63be-d66a-4402-923b-872089768381",
       "name": "Volkoren brood 1 ST.",
+<<<<<<< Updated upstream
       "price": 2,
       "stock": 9,
+=======
+      "stock": 3,
+>>>>>>> Stashed changes
       "active": false,
       "icon": "N"
     },
