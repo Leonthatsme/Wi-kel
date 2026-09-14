@@ -17,11 +17,11 @@ const initial = {
     }
   ],
   products: [
-    { id: 'melk', name: 'Verse melk 1L', price: 1.75, stock: 6, active: true, icon: 'M' },
-    { id: 'yoghurt', name: 'Verse yoghurt 1L', price: 1.50, stock: 3, active: true, icon: 'Y' },
-    { id: 'brood', name: 'Tarwe brood 1 ST.', price: 2, stock: 5, active: true, icon: 'B' },
-    { id: 'ijsjes', name: 'Ola Ijs Liuk Waterijs 75 ML', price: 0.75, stock: 12, active: true, icon: 'I' },
-    { id: 'frisdrank', name: 'Frisdrank', price: 1.50, stock: 0, active: true, icon: 'F' }
+    { id: 'melk', name: 'Verse melk 1L', price: 1.75, stock: 6, active: true },
+    { id: 'yoghurt', name: 'Verse yoghurt 1L', price: 1.50, stock: 3, active: true },
+    { id: 'brood', name: 'Tarwe brood 1 ST.', price: 2, stock: 5, active: true },
+    { id: 'ijsjes', name: 'Ola Ijs Liuk Waterijs 75 ML', price: 0.75, stock: 12, active: true },
+    { id: 'frisdrank', name: 'Frisdrank', price: 1.50, stock: 0, active: true }
   ]
 };
 
@@ -145,7 +145,7 @@ http
           return json(res, 400, { error: 'Controleer de productnaam, prijs en voorraad.' });
 
         const data = read();
-        const product = { id: crypto.randomUUID(), name: name.trim(), price: Math.round(price * 100) / 100, stock, active: true, icon: 'N' };
+        const product = { id: crypto.randomUUID(), name: name.trim(), price: Math.round(price * 100) / 100, stock, active: true };
         data.products.push(product);
         write(data);
         return json(res, 201, product);

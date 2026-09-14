@@ -51,19 +51,12 @@
           const [label, state] = statusFor(product);
           return `
             <article class="product-card ${state}">
-<<<<<<< Updated upstream
               <div class="public-product-info">
                 <div class="product-name">${escapeHtml(product.name)}</div>
                 <div class="product-price">${formatPrice(product.price)}</div>
                 <div class="status ${state}"><span></span>${label}</div>
               </div>
               <div class="stock"><strong>${product.active ? product.stock : '—'}</strong><span>op voorraad</span></div>
-=======
-              <div class="product-icon" aria-hidden="true">${product.icon || '•'}</div>
-              <div class="product-name">${escapeHtml(product.name)}</div>
-              <div class="stock"><strong>${product.active ? product.stock : '—'}</strong></div>
-              <div class="status ${state}"><span></span>${label}</div>
->>>>>>> Stashed changes
             </article>
           `.trim();
         })
@@ -148,7 +141,6 @@
           const [label, state] = statusFor(product);
           return `
             <article class="admin-product" data-id="${product.id}" data-stock="${product.stock}">
-              <div class="product-icon" aria-hidden="true">${product.icon || '•'}</div>
               <div class="admin-product-info">
                 <h2>${escapeHtml(product.name)}</h2>
                 <p class="product-price">${formatPrice(product.price)}</p>
