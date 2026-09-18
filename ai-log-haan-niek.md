@@ -157,4 +157,74 @@ niks
 
 we konden met de goede inlog gegevens inloggen
 
+## 2026-09-11
+
+### Prompt
+
+voor de voor pagina willen wij hetzelfde hebben als de voorraar pagina, de tekst
+van wat is er vandaag beschikbaar en kom gerust langs etc kan allemaal weg, de enige wat echt nodig is de product, hoeveel van de product en als het beschikbaar is. de icoontje kan ook wel met de letters erin
+
+### Outputsamenvatting
+
+vsc ai genereerde net als de beheer pagina een overzicht met alleen de product, hoeveel er nog over is en als het beschikbaar is
+
+### Kritische beoordeling
+
+had niet dezelfde overzicht/ layout van de beheer pagina, het zat allemaal in een vierkant en niet allemaal onder elkaar in het midden
+
+### Eigen aanpassingen
+
+nieuwe prompt gegeven hoe het beter kan worden
+
+### Resultaat
+
+de voorpagina om producten te laten tonen kreeg een overzichtelijke pagina
+
+
+## 2026-09-11
+
+### Prompt
+
+waar de "verse melk" in zit in die tabel moet hetzelfde worden als in waar we de voorraad kunnen aanpassen, ook de ronde icoontje moeten weg met 1 letter erin (met een foto erbij die ik niet weet hoe ik die nu moet tonen)
+
+### Outputsamenvatting
+
+vsc ai maakte een verbeterende vervolg van de vorige prompt
+
+### Kritische beoordeling
+
+nogsteeds niet hoe de beheer pagina en de voorpagina hetzelfde layout heeft
+
+### Eigen aanpassingen
+
+nog een verbeterende prompt geven om de layout te verbeteren
+
+### Resultaat
+
+de informatie klopt hoe het moet staan behalve de layout
+
+## 2026-09-11
+
+### Prompt
+
+het moet dat de producten op 1 rij onder elkaar komen te staan net als in hoe we konden bewerken etc in beheer.html, de kleuren voor de homepagina moet zwart wit
+
+### Outputsamenvatting
+
+de voorpagina staat netjes en er is geen enkel andere tekst toegevoegd behalve de informatie die getoond moet worden, de kleuren zijn ook zwart en wit
+
+### Kritische beoordeling
+
+niet
+
+### Eigen aanpassingen
+
+niks
+
+### Resultaat
+
+de voorpagina is als in de beheerpagina hetzelfde, de kleuren zijn alleen zwart en wit
+
+
+
 
